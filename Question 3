@@ -1,0 +1,49 @@
+#include <iostream>
+
+int main() {
+    int x = 0;
+    int a,b,area,r;
+    std::cout<<" 1. Square\n 2. Rectangle\n 3. Triangle\n 4. Circle\n"<<std::endl;
+    std::cout<<"Please enter an integer between 1 and 4: ";
+    try{
+         std::cin>> x;
+        if (x > 4 || x<1){
+            throw 35;
+        }
+    }catch (int e){
+        std::cout<<"An error occurred. Exception Nr. "<<e<< '\n';
+    }
+    //std::cin>> x;
+    switch (x)
+    {
+        case 1:
+            std::cout<<"Enter value of a side: ";
+            std::cin>> a;
+            area = a*a;
+            std::cout<<"Area: "<< area << std::endl;
+            break;
+        case 2:
+            std::cout<<"Enter value of side 1: ";
+            std::cin>> a;
+            std::cout<<"Enter value of side 2: ";
+            std::cin>> b;
+            area = a*b;
+            std::cout<<"Area: "<<area<<std::endl;
+            break;
+        case 3:
+            std::cout<<"Please enter value of side 1: ";
+            std::cin>> a;
+            std::cout<<"Please enter value of side 2: ";
+            std::cin>> b;
+            area = 0.5*a*b;
+            std::cout<<"Area: "<<area<<std::endl;
+            break;
+        case 4:
+            std::cout<<"Please enter radius: ";
+            std::cin>> r;
+            area = 3.14*r*r;
+            std::cout<<"Area: "<<area<<std::endl;
+            break;
+    }
+    return 0;
+}
